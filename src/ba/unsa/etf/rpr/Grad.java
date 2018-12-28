@@ -25,6 +25,19 @@ public class Grad {
         drzava=null;
     }
 
+    public Grad(Grad glavniGrad) {
+        this.id=glavniGrad.id;
+        this.naziv=glavniGrad.naziv;
+        this.broj_Stanovnika=glavniGrad.broj_Stanovnika;
+    }
+
+    public Grad(int id, String text, int brojStanovnikaInt, Drzava drzava) {
+        this.id.setValue(id);
+        this.naziv.setValue(text);
+        this.broj_Stanovnika.setValue(brojStanovnikaInt);
+        this.drzava=drzava;
+    }
+
     public SimpleIntegerProperty getIdProperty(){
         return id;
     }

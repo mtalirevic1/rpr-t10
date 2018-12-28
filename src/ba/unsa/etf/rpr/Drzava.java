@@ -22,6 +22,11 @@ public class Drzava {
         glavniGrad=gg;
     }
 
+    public Drzava(int idZaDrzavu, String text) {
+        this.id.setValue(idZaDrzavu);
+        this.naziv.setValue(text);
+    }
+
     public SimpleIntegerProperty getIdProperty(){
         return id;
     }
