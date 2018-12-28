@@ -1,45 +1,56 @@
 package ba.unsa.etf.rpr;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 public class Drzava {
-    private int id;
-    private String naziv;
+    private SimpleIntegerProperty id=new SimpleIntegerProperty(0);
+    private SimpleStringProperty naziv=new SimpleStringProperty("");
     private Grad glavniGrad;
 
     public Drzava(){}
 
-    public Drzava( int id, String naziv, Grad glavniGrad) {
-        this.id = id;
-        this.naziv=naziv;
-        this.glavniGrad=glavniGrad;
+    public Drzava( int id, String naziv, Grad gg) {
+        this.id.setValue(id);
+        this.naziv.setValue(naziv);
+        glavniGrad=gg;
     }
 
-    public Drzava( String naziv, Grad glavniGrad) {
-        this.id = 0;
-        this.naziv=naziv;
-        this.glavniGrad=glavniGrad;
+    public Drzava( String naziv, Grad gg) {
+        id.setValue(0);
+        this.naziv.setValue(naziv);
+        glavniGrad=gg;
     }
 
-    public int getId() {
+    public SimpleIntegerProperty getIdProperty(){
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNaziv() {
+    public SimpleStringProperty getNazivProperty(){
         return naziv;
     }
 
+    public int getId() {
+        return id.getValue();
+    }
+
+    public void setId(int id) {
+        this.id.setValue(id);
+    }
+
+    public String getNaziv() {
+        return naziv.getValue();
+    }
+
     public void setNaziv(String naziv) {
-        this.naziv = naziv;
+        this.naziv.setValue(naziv);
     }
 
     public Grad getGlavniGrad() {
         return glavniGrad;
     }
 
-    public void setGlavniGrad(Grad glavniGrad) {
-        this.glavniGrad = glavniGrad;
+    public void setGlavniGrad(Grad gg) {
+        glavniGrad = gg;
     }
 }
